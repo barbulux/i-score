@@ -4,6 +4,9 @@
 #pragma GCC system_header
 #pragma clang system_header
 
+#include <wobjectdefs.h>
+#include <wobjectimpl.h>
+
 #include <QSize>
 #include <QComboBox>
 #include <QAbstractItemModel>

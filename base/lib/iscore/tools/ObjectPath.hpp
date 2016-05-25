@@ -167,4 +167,4 @@ uint qHash(const ObjectPath& obj, uint seed)
   return qHash(obj.toString(), seed);
 }
 
-Q_DECLARE_METATYPE(ObjectPath)
+W_REGISTER_ARGTYPE(ObjectPath)

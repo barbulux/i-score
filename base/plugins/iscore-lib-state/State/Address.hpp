@@ -1,6 +1,5 @@
 #pragma once
-
-
+#include <wobjectdefs.h>
 #include <QHash>
 #include <QList>
 #include <QString>
@@ -105,4 +104,5 @@ namespace std {
   };
 
 }
-Q_DECLARE_METATYPE(State::Address)
+
+W_REGISTER_ARGTYPE(State::Address)

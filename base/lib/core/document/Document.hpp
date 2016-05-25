@@ -34,7 +34,7 @@ class DocumentView;
      */
 class ISCORE_LIB_BASE_EXPORT Document final : public NamedObject
 {
-        Q_OBJECT
+        W_OBJECT(Document)
         friend class DocumentBuilder;
         friend struct DocumentContext;
     public:
@@ -80,8 +80,9 @@ class ISCORE_LIB_BASE_EXPORT Document final : public NamedObject
 
         void setBackupMgr(DocumentBackupManager* backupMgr);
 
-    signals:
-        void aboutToClose();
+    // signals:
+        void aboutToClose()
+        W_SIGNAL(aboutToClose)
 
     private:
         // These are to be constructed by DocumentBuilder.

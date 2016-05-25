@@ -48,4 +48,4 @@ CURVE_SEGMENT_METADATA(
         "Linear",
         "Linear")
 
-Q_DECLARE_METATYPE(Curve::LinearSegmentData)
+W_REGISTER_ARGTYPE(Curve::LinearSegmentData)

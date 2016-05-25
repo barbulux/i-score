@@ -11,4 +11,4 @@ struct MinuitSpecificSettings
     QString host;
 };
 }
-Q_DECLARE_METATYPE(Ossia::MinuitSpecificSettings)
+W_REGISTER_ARGTYPE(Ossia::MinuitSpecificSettings)

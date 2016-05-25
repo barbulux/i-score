@@ -85,4 +85,4 @@ class ISCORE_PLUGIN_SCENARIO_EXPORT RackModel final :
 };
 }
 DEFAULT_MODEL_METADATA(Scenario::RackModel, "Rack")
-Q_DECLARE_METATYPE(Id<Scenario::RackModel>)
+W_REGISTER_ARGTYPE(Id<Scenario::RackModel>)

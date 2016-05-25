@@ -1,4 +1,5 @@
 #pragma once
+#include <wobjectdefs.h>
 #include <iscore/command/SerializableCommand.hpp>
 #include <QObject>
 
@@ -18,7 +19,7 @@ namespace iscore
      */
     class ISCORE_LIB_BASE_EXPORT CommandStack final : public QObject
     {
-            Q_OBJECT
+            W_OBJECT(CommandStack)
 
             friend class CommandBackupFile;
             friend struct CommandStackBackup;
@@ -86,42 +87,62 @@ namespace iscore
             auto& undoable() const { return m_undoable; }
             auto& redoable() const { return m_redoable; }
 
-        signals:
+        // signals:
             /**
              * @brief push_start Is emitted when a command was pushed on the stack
              * @param cmd the command that was pushed
              */
-            void localCommand(iscore::SerializableCommand* cmd);
+            void localCommand(iscore::SerializableCommand* cmd)
+            W_SIGNAL(localCommand, cmd)
 
 
             /**
              * @brief onUndo Is emitted when the user calls "Undo"
              */
-            void localUndo();
+            void localUndo()
+            W_SIGNAL(localUndo)
 
             /**
              * @brief onRedo Is emitted when the user calls "Redo"
              */
-            void localRedo();
+            void localRedo()
+            W_SIGNAL(localRedo)
 
-            void localIndexChanged(int);
+            void localIndexChanged(int i)
+            W_SIGNAL(localIndexChanged, i)
 
-            void canUndoChanged(bool);
-            void canRedoChanged(bool);
+            void canUndoChanged(bool b)
+            W_SIGNAL(canUndoChanged, b)
 
-            void undoTextChanged(QString);
-            void redoTextChanged(QString);
+            void canRedoChanged(bool b)
+            W_SIGNAL(canRedoChanged, b)
 
-            void indexChanged(int);
-            void stackChanged();
+            void undoTextChanged(QString s)
+            W_SIGNAL(undoTextChanged, s)
+
+            void redoTextChanged(QString s)
+            W_SIGNAL(redoTextChanged, s)
+
+            void indexChanged(int i)
+            W_SIGNAL(indexChanged, i)
+
+            void stackChanged()
+            W_SIGNAL(stackChanged)
 
             // These signals are low-level and are sent on each operation that affects the stacks
-            void sig_undo();
-            void sig_redo();
-            void sig_push();
-            void sig_indexChanged();
+            void sig_undo()
+            W_SIGNAL(sig_undo)
 
-        public slots:
+            void sig_redo()
+            W_SIGNAL(sig_redo)
+
+            void sig_push()
+            W_SIGNAL(sig_push)
+
+            void sig_indexChanged()
+            W_SIGNAL(sig_indexChanged)
+
+        // public slots:
             void setIndex(int index);
             void setIndexQuiet(int index);
 
@@ -165,7 +186,7 @@ namespace iscore
                 emit localRedo();
             }
 
-        public:
+        // public:
             template<typename Callable>
             /**
              * @brief updateStack Updates the undo / redo stack

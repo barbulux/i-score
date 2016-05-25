@@ -82,4 +82,4 @@ class SimpleExpressionEditorWidget final : public QWidget
 };
 }
 
-Q_DECLARE_METATYPE(Scenario::ExpressionEditorComparator)
+W_REGISTER_ARGTYPE(Scenario::ExpressionEditorComparator)

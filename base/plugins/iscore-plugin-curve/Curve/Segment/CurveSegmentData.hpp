@@ -177,7 +177,7 @@ bmi::identity<SegmentData>
 enum Segments { Hashed, Ordered };
 }
 
-Q_DECLARE_METATYPE(Curve::SegmentData)
+W_REGISTER_ARGTYPE(Curve::SegmentData)
 
 
 #define CURVE_SEGMENT_FACTORY_METADATA(Export, Model, Uuid) \

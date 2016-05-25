@@ -9,4 +9,4 @@ struct LocalSpecificSettings
 
 };
 }
-Q_DECLARE_METATYPE(Ossia::LocalSpecificSettings)
+W_REGISTER_ARGTYPE(Ossia::LocalSpecificSettings)

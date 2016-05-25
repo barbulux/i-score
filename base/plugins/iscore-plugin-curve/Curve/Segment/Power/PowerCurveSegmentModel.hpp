@@ -71,4 +71,4 @@ CURVE_SEGMENT_METADATA(
         "Power",
         "Power")
 
-Q_DECLARE_METATYPE(Curve::PowerSegmentData)
+W_REGISTER_ARGTYPE(Curve::PowerSegmentData)

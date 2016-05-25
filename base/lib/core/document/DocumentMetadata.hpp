@@ -2,17 +2,14 @@
 #include <QString>
 #include <QObject>
 #include <QDateTime>
+#include <wobjectdefs.h>
 
 #include <iscore_lib_base_export.h>
 namespace iscore
 {
 struct ISCORE_LIB_BASE_EXPORT DocumentMetadata : public QObject
 {
-        Q_OBJECT
-        Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
-        Q_PROPERTY(QString author READ author WRITE setAuthor NOTIFY authorChanged)
-        Q_PROPERTY(QDateTime creation READ creation WRITE setCreation NOTIFY creationChanged)
-        Q_PROPERTY(QDateTime lastEdition READ lastEdition WRITE setLastEdition NOTIFY lastEditionChanged)
+        W_OBJECT(DocumentMetadata)
 
         QString m_fileName{QObject::tr("Untitled")};
         QString m_author;
@@ -30,11 +27,25 @@ struct ISCORE_LIB_BASE_EXPORT DocumentMetadata : public QObject
         void setCreation(QDateTime creation);
         void setLastEdition(QDateTime lastEdition);
 
-    signals:
-        void fileNameChanged(QString fileName);
-        void authorChanged(QString author);
-        void creationChanged(QDateTime creation);
-        void lastEditionChanged(QDateTime lastEdition);
+        //signals:
+        void fileNameChanged(QString fileName)
+        W_SIGNAL(fileNameChanged, fileName)
+
+        void authorChanged(QString author)
+        W_SIGNAL(authorChanged, author)
+
+        void creationChanged(QDateTime creation)
+        W_SIGNAL(creationChanged, creation)
+
+        void lastEditionChanged(QDateTime lastEdition)
+        W_SIGNAL(lastEditionChanged, lastEdition)
+
+        private:
+          W_PROPERTY(QString, fileName WRITE setFileName READ fileName NOTIFY fileNameChanged)
+          W_PROPERTY(QString, author WRITE setAuthor READ author NOTIFY authorChanged)
+          W_PROPERTY(QDateTime, creation WRITE setCreation READ creation NOTIFY creationChanged)
+          W_PROPERTY(QDateTime, lastEdition WRITE setLastEdition READ lastEdition NOTIFY lastEditionChanged)
+
 };
 
 }

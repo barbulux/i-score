@@ -63,4 +63,4 @@ CURVE_SEGMENT_METADATA(
         "Gamma",
         "Gamma")
 
-Q_DECLARE_METATYPE(Curve::GammaSegmentData)
+W_REGISTER_ARGTYPE(Curve::GammaSegmentData)

@@ -61,4 +61,4 @@ class ISCORE_LIB_DEVICE_EXPORT ProtocolFactory :
 };
 }
 
-Q_DECLARE_METATYPE(UuidKey<Device::ProtocolFactory>)
+W_REGISTER_ARGTYPE(UuidKey<Device::ProtocolFactory>)

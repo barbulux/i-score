@@ -23,4 +23,4 @@ class ISCORE_LIB_PROCESS_EXPORT FocusDispatcher : public QObject
         void focus(QPointer<Process::LayerPresenter>);
 };
 
-Q_DECLARE_METATYPE(QPointer<Process::LayerPresenter>)
+W_REGISTER_ARGTYPE(QPointer<Process::LayerPresenter>)

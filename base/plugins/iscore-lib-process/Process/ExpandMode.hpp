@@ -2,4 +2,4 @@
 #include <QMetaType>
 
 enum ExpandMode { Scale, GrowShrink, ForceGrow, Fixed };
-Q_DECLARE_METATYPE(ExpandMode)
+W_REGISTER_ARGTYPE(ExpandMode)

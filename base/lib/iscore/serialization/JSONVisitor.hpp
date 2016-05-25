@@ -517,6 +517,6 @@ inline void fromJsonArray(QJsonArray&& json_arr, QStringList& list)
     }
 }
 
-Q_DECLARE_METATYPE(Visitor<Reader<JSONObject>>*)
-Q_DECLARE_METATYPE(Visitor<Writer<JSONObject>>*)
+W_REGISTER_ARGTYPE(Visitor<Reader<JSONObject>>*)
+W_REGISTER_ARGTYPE(Visitor<Writer<JSONObject>>*)
 

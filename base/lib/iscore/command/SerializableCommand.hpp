@@ -1,6 +1,7 @@
 #pragma once
 #include <iscore/command/Command.hpp>
 #include <iscore/command/CommandFactoryKey.hpp>
+#include <wobjectdefs.h>
 #include <QByteArray>
 #include <QString>
 
@@ -32,3 +33,5 @@ class ISCORE_LIB_BASE_EXPORT SerializableCommand : public Command
         virtual void deserializeImpl(DataStreamOutput&) = 0;
 };
 }
+
+W_REGISTER_ARGTYPE(iscore::SerializableCommand*)

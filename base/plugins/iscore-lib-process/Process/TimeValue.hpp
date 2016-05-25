@@ -371,4 +371,4 @@ struct TSerializer<JSONValue, TimeValue>
 };
 
 
-Q_DECLARE_METATYPE(TimeValue)
+W_REGISTER_ARGTYPE(TimeValue)

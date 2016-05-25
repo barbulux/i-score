@@ -10,5 +10,5 @@ struct MIDISpecificSettings
         QString endpoint;
 };
 }
-Q_DECLARE_METATYPE(Ossia::MIDISpecificSettings)
+W_REGISTER_ARGTYPE(Ossia::MIDISpecificSettings)
 

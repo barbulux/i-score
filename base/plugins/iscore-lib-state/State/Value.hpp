@@ -1,4 +1,5 @@
 #pragma once
+#include <wobjectdefs.h>
 #include <iscore/serialization/DataStreamVisitor.hpp>
 #include <iscore/serialization/JSONVisitor.hpp>
 #include <iscore_lib_state_export.h>
@@ -121,9 +122,8 @@ using ValueList = QList<Value>;
 using OptionalValue = optional<State::Value>;
 }
 
-Q_DECLARE_METATYPE(State::no_value_t)
-Q_DECLARE_METATYPE(State::impulse_t)
-Q_DECLARE_METATYPE(State::Value)
-Q_DECLARE_METATYPE(State::ValueList)
-Q_DECLARE_METATYPE(State::ValueType)
-
+W_REGISTER_ARGTYPE(State::no_value_t)
+W_REGISTER_ARGTYPE(State::impulse_t)
+W_REGISTER_ARGTYPE(State::Value)
+W_REGISTER_ARGTYPE(State::ValueList)
+W_REGISTER_ARGTYPE(State::ValueType)

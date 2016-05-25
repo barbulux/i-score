@@ -34,4 +34,4 @@ class ExecutionStatusProperty final : public QObject
 };
 }
 
-Q_DECLARE_METATYPE(Scenario::ExecutionStatus)
+W_REGISTER_ARGTYPE(Scenario::ExecutionStatus)

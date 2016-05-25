@@ -1,4 +1,5 @@
 #pragma once
+#include <wobjectdefs.h>
 #include <Device/Node/DeviceNode.hpp>
 #include <Device/Protocol/DeviceSettings.hpp>
 #include <State/Address.hpp>
@@ -33,7 +34,7 @@ struct ISCORE_LIB_DEVICE_EXPORT DeviceCapas
 
 class ISCORE_LIB_DEVICE_EXPORT DeviceInterface : public QObject
 {
-        Q_OBJECT
+        W_OBJECT(DeviceInterface)
 
     public:
         explicit DeviceInterface(Device::DeviceSettings s);
@@ -72,18 +73,27 @@ class ISCORE_LIB_DEVICE_EXPORT DeviceInterface : public QObject
         // Make a node from an inside path, if it has been added for instance.
         virtual Device::Node getNode(const State::Address&) = 0;
 
-    signals:
+    // signals:
         // These signals are emitted if a device changes from the inside
-        void pathAdded(const State::Address&);
-        void pathUpdated(
-                const State::Address&, // current address
-                const Device::AddressSettings&); // new data
-        void pathRemoved(const State::Address&);
+        void pathAdded(const State::Address& addr)
+        W_SIGNAL(pathAdded, addr)
 
-        void valueUpdated(const State::Address&, const State::Value&);
+        void pathUpdated(
+                const State::Address& addr, // current address
+                const Device::AddressSettings& set) // new data
+        W_SIGNAL(pathUpdated, addr, set)
+
+        void pathRemoved(const State::Address& addr)
+        W_SIGNAL(pathRemoved, addr)
+
+        void valueUpdated(
+                const State::Address& addr,
+                const State::Value& val)
+        W_SIGNAL(valueUpdated, addr, val)
 
         // In case the whole namespace changed?
-        void namespaceUpdated();
+        void namespaceUpdated()
+        W_SIGNAL(namespaceUpdated)
 
     protected:
         Device::DeviceSettings m_settings;

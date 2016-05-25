@@ -91,5 +91,5 @@ class ISCORE_PLUGIN_CURVE_EXPORT PointArraySegment final : public SegmentModel
 }
 
 
-Q_DECLARE_METATYPE(Curve::PointArraySegmentData)
+W_REGISTER_ARGTYPE(Curve::PointArraySegmentData)
 

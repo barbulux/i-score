@@ -83,5 +83,5 @@ struct TSerializer<JSONObject, State::MessageList>
         }
 };
 
-Q_DECLARE_METATYPE(State::Message)
-Q_DECLARE_METATYPE(State::MessageList)
+W_REGISTER_ARGTYPE(State::Message)
+W_REGISTER_ARGTYPE(State::MessageList)

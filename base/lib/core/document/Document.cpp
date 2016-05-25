@@ -18,6 +18,9 @@ class QWidget;
 class Selection;
 #include <iscore/tools/SettableIdentifier.hpp>
 
+#include <wobjectimpl.h>
+
+W_OBJECT_IMPL(iscore::Document)
 namespace iscore
 {
 DocumentContext DocumentContext::fromDocument(Document &d)

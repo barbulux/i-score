@@ -1,6 +1,8 @@
 #include <Device/Address/AddressSettings.hpp>
 #include <Device/Node/DeviceNode.hpp>
 #include "DeviceInterface.hpp"
+#include <wobjectimpl.h>
+W_OBJECT_IMPL(Device::DeviceInterface)
 
 namespace Device
 {

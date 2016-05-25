@@ -174,5 +174,5 @@ class ISCORE_PLUGIN_SCENARIO_EXPORT ConstraintModel final :
 
 DEFAULT_MODEL_METADATA(Scenario::ConstraintModel, "Constraint")
 
-Q_DECLARE_METATYPE(Id<Scenario::ConstraintModel>)
-Q_DECLARE_METATYPE(Path<Scenario::ConstraintModel>)
+W_REGISTER_ARGTYPE(Id<Scenario::ConstraintModel>)
+W_REGISTER_ARGTYPE(Path<Scenario::ConstraintModel>)

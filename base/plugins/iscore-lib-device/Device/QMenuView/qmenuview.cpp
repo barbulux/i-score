@@ -55,7 +55,7 @@ J'ai apporté quelques modifications en plus.
 
 class QWidget;
 
-Q_DECLARE_METATYPE(QModelIndex)
+W_REGISTER_ARGTYPE(QModelIndex)
 
 
 void ClickableMenu::mouseReleaseEvent(QMouseEvent* event)

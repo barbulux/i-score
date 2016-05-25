@@ -83,5 +83,5 @@ class ISCORE_LIB_PROCESS_EXPORT ModelMetadata : public QObject
         QString m_label;
 };
 
-Q_DECLARE_METATYPE(ModelMetadata)
+W_REGISTER_ARGTYPE(ModelMetadata)
 

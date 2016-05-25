@@ -56,7 +56,7 @@ class ObjectIdentifier
         optional<int32_t> m_id;
 };
 
-Q_DECLARE_METATYPE(ObjectIdentifier)
+W_REGISTER_ARGTYPE(ObjectIdentifier)
 
 typedef std::vector<ObjectIdentifier> ObjectIdentifierVector;
 

@@ -1,5 +1,7 @@
 #include "DocumentMetadata.hpp"
+#include <wobjectimpl.h>
 
+W_OBJECT_IMPL(iscore::DocumentMetadata)
 namespace iscore
 {
 

@@ -7,4 +7,4 @@ enum class ConstraintExecutionState {
     Enabled, Disabled
 };
 }
-Q_DECLARE_METATYPE(Scenario::ConstraintExecutionState)
+W_REGISTER_ARGTYPE(Scenario::ConstraintExecutionState)

@@ -22,3 +22,6 @@
 [submodule "3rdparty/nodeeditor"]
 	path = 3rdparty/nodeeditor
 	url = https://github.com/jcelerier/nodeeditor
+[submodule "3rdparty/verdigris"]
+	path = 3rdparty/verdigris
+	url = https://github.com/woboq/verdigris

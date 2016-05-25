@@ -3,6 +3,9 @@
 #include <QVector>
 
 #include <iscore/command/SerializableCommand.hpp>
+#include <wobjectimpl.h>
+
+W_OBJECT_IMPL(iscore::CommandStack)
 
 namespace iscore
 {

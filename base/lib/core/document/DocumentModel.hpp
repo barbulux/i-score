@@ -28,7 +28,7 @@ struct ApplicationContext;
      */
 class ISCORE_LIB_BASE_EXPORT DocumentModel final : public IdentifiedObject<DocumentModel>
 {
-        Q_OBJECT
+        W_OBJECT(DocumentModel)
     public:
         DocumentModel(
                 const Id<DocumentModel>& id,

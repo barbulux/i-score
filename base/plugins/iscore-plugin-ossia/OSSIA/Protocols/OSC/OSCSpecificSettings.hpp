@@ -12,4 +12,4 @@ struct OSCSpecificSettings
 };
 }
 
-Q_DECLARE_METATYPE(Ossia::OSCSpecificSettings)
+W_REGISTER_ARGTYPE(Ossia::OSCSpecificSettings)

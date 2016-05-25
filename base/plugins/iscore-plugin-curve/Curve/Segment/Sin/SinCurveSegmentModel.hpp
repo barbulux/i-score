@@ -68,4 +68,4 @@ CURVE_SEGMENT_METADATA(
         "Sin",
         "Sin")
 
-Q_DECLARE_METATYPE(Curve::SinSegmentData)
+W_REGISTER_ARGTYPE(Curve::SinSegmentData)

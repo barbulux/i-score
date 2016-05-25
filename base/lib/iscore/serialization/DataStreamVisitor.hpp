@@ -446,5 +446,5 @@ struct TSerializer<
 };
 
 
-Q_DECLARE_METATYPE(Visitor<Reader<DataStream>>*)
-Q_DECLARE_METATYPE(Visitor<Writer<DataStream>>*)
+W_REGISTER_ARGTYPE(Visitor<Reader<DataStream>>*)
+W_REGISTER_ARGTYPE(Visitor<Writer<DataStream>>*)
