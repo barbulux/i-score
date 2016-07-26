@@ -322,7 +322,9 @@ static OSSIA::Value toOSSIAValue(const State::ValueImpl& val)
             }
     } visitor{};
 
-    return eggs::variants::apply(visitor, val.impl());
+    if(val.impl())
+        return eggs::variants::apply(visitor, val.impl());
+    return {};
 }
 
 OSSIA::Value toOSSIAValue(
@@ -353,13 +355,18 @@ optional<OSSIA::Message> message(
 
         if(!ossia_node)
             return {};
+
         auto ossia_addr = ossia_node->getAddress();
         if (!ossia_addr)
-            return{};
+            return {};
+
+        auto val = iscore::convert::toOSSIAValue(mess.value);
+        if(!val.v)
+            return {};
 
         return OSSIA::Message{
                     ossia_addr,
-                    iscore::convert::toOSSIAValue(mess.value)};
+                    std::move(val)};
     }
 
     return {};
